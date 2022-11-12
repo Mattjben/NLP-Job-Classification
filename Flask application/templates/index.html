@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="header">
+<h1 class="title">Job Search</h1>
+  <br>
+</div>
+  <!-- SEARCHBAR  !-->  
+<div class="Searchbar">
+  
+
+  <!-- SEARCH TITLES !--> 
+  <form name="search" id="search" method="POST" action="{{ url_for('search') }}" novalidate>
+  <input class="searchword" name ="Keyword" id="Keyword" type="search" placeholder="Search" aria-label="Search" name="searched">
+  <button type="submit" class="searchButton">Search</button></div>
+<!-- COLLAPSABLE ADVANCED SEARCH !--> 
+<!--CSS TEMPLATE FOR COLLAPSING BUTTON [3]	“Implementing A Pure CSS Collapsible | DigitalOcean.” https://www.digitalocean.com/community/tutorials/css-collapsible (accessed Oct. 16, 2022).!-->
+<div class="wrap-collabsible"> <input id="collapsible2" class="toggle" type="checkbox" >
+<label for="collapsible2" class="lbl-toggle">Advanced</label>
+<div class="collapsible-content"><div class="content-inner">
+  <!-- SEPERATE FILTERS BY COLUMNS !--> 
+    <div class="row2">
+    <div class="col">
+      <!-- INPUT SALARY RANGE !--> 
+      <h3>Salary Range:</h3><br>
+      <br>
+    <input name = "salmin" id="salmin" class="searchlist right" maxlength='6' placeholder='Min Salary' type='tel'> 
+    <p class="searchrange">-</p>
+    <input name = "salmax"class="searchlist left" maxlength='6' placeholder='Max Salary' type='tel'>
+    </div> 
+    <div class="col">
+      <!--CHECKLIST CONTAING CONTRACT TYPES  !--> 
+        <h3>Contract Type:</h3><br>
+          <input type="checkbox" class="hi" id="ContractType1" name="Contractp" value="Part time">
+          <label for="ContractType1"> Part Time</label><br>
+          <input type="checkbox" id="ContractType2" name="Contractf" value="Full Time">
+          <label for="ContractType2"> Full Time</label><br>
+          <input type="checkbox" id="ContractType3" name="Contractca" value="Casual">
+          <label for="ContractType3"> Casual</label><br>
+          <input type="checkbox" id="ContractType4" name="Contractc" value="Contract">
+          <label for="ContractType4"> Contract</label><br><br>
+        </div><div class="col">
+      <!-- CHECKLIST CONTAINING JOB CATEGORIES  !--> 
+                <h3>Category:</h3><br>
+                <input type="checkbox" class="hi" id="ContractType1" name="Cat1" value="Accounting_Finance">
+                <label for="ContractType1"> Accounting/Finance</label><br>
+                <input type="checkbox" id="ContractType2" name="Cat2" value="Engineering">
+                <label for="ContractType2"> Engineering</label><br>
+                <input type="checkbox" id="ContractType3" name="Cat3" value="Healthcare_Nursing">
+                <label for="ContractType3"> Healthcare/Nursing</label><br>
+                <input type="checkbox" id="ContractType4" name="Cat4" value="Sales">
+                <label for="ContractType4"> Sales</label><br><br>
+    </div>
+  </div>    
+<br><br><br>
+    </div></div></div>
+  <br>
+</form>
+<!-- JOB POSTINGS  !--> 
+<ul class="row">
+
+
+  {% if posts == [] %}
+  <div class="header"> <!-- DISPLAY MESSAGE IF NO JOB POSTING ARE FOUND  !--> 
+    <h2 class="title">...Couldn't find what you are looking for</h1>
+      <br>
+    </div>
+  {% endif %}
+
+{% for job in posts %}
+
+<!-- JOB CARDS !--> 
+ <div class="card" >
+  <a href="{{ url_for('post', Webindex=job.Webindex)}}" >
+    <div class="text-center">
+      
+    <h1 class="centre">
+          {{ job['Title'] }} 
+    </h1>
+  
+    <p class="card-content">
+      
+      {% if job['Company'] != 'NA' %}
+      <b>Company:</b></a><a class="link" href="{{ url_for('Profilepage', Company=job['Company'])}}" type="company" > {{ job['Company'] }}</a><br>
+
+      {% endif %}
+      
+      {% if job['Salary'] %}
+     <a href="{{ url_for('post', Webindex=job.Webindex)}}"><b>Salary:</b> ${{ job['Salary'] }}</a><br>
+      {% endif %}
+
+      {% if job['ContractType'] %}
+      <a href="{{ url_for('post', Webindex=job.Webindex)}}"><b>ContractType:</b> {{ job['ContractType'] }}</a><br>
+      {% endif %}
+              
+              
+    </p>
+  
+  </div>
+
+</div>
+
+
+
+{% endfor %}
+</ul>
+<hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="Footer" >
+      
+          
+            <h6 >Desgined 2022</h6>
+            <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+            <h6><b>Student ID:</b>  S3923076 </h6>
+            <h6><b>Student Name:</b> Matthew Bentham</h6>
+         
+      </div>
+    </footer>
+  
+   
+  
+    
+  
+    {% endblock %}
+
+  </body>
+
+</html>

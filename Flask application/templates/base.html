@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- LOAD FONTS  !--> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<html>
+<head>
+  <!-- LOAD CSS SHEET !--> 
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }} " type="text/css" media="all" />
+</head>
+  <!-- LOGO CREATED IN CANVA !--> 
+<link rel="icon"  href="https://i.postimg.cc/DwM47kNs/Capture.png"width=60 height=35 >
+<!-- NAVIGATION BAR !--> 
+<header class="sticky">
+  <h1> <!-- LOGO !--> 
+    <span class="logo"><a href="/"><img src="https://i.postimg.cc/DwM47kNs/Capture.png" alt="" width="60" height="50"></span>
+  </h1>
+  <div class="navbar">
+    <h1 class="logo"></h1>
+    <nav>
+      
+        <ul>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li> <a class="nav-link" href="{{ url_for('search')}}">Job Search</a></li>
+        <!-- ADD PROFILE LINK AND LOGOUT IF USER LOGS IN  !--> 
+        {% if session['logged_in'] %}   
+        <li><a class="image" href="{{ url_for('Userpage')}}"><center><img src="https://i.postimg.cc/Jhb8TH28/login.png" alt="" width="20" height="20"></center><center>{{ current_user.Username }}</center></a></li>
+        <li><a class="image" href="{{ url_for('logout')}}"><img src="https://i.postimg.cc/5yqn7xf0/logout.png" alt="" width="20" height="20"></a></li>
+        
+        {% else %}
+        <li><a class="nav-link" href="{{ url_for('login')}}">Login / Register</a></li>
+        {% endif %}
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<body>
+
+
+
+{% block body %}
+<hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="Footer" >
+      
+          
+            <h6 >Desgined 2022</h6>
+            <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+            <h6><b>Student ID:</b>  S3923076 </h6>
+            <h6><b>Student Name:</b> Matthew Bentham</h6>
+         
+      </div>
+    </footer>
+
+    {% endblock %}
+
+  </body>
+
+</html>

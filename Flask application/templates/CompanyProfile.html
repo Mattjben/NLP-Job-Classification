@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- FLASH MESSAGES  !--> 
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% for category, message in messages %}
+						<div class="alert {{ category }}" role="alert">
+				{{ message }}
+				</div>
+				{% endfor %}
+				{% endwith %}
+				
+
+				<!-- DISPLAYS ALL POSTS BY THE SPECIFIC COMPANY INPUTTED !--> 
+				{% if posts != [] %}
+				<div class="header">
+					<h1 class="title">Jobs Posted By {{ posts[0]['Company'] }}  </h1>
+					<br>
+					</div>
+				{% endif %}
+	<ul class="row">
+	
+		
+		
+		
+		{% for job in posts %}
+		
+		
+		
+		<!-- JOB POST CARDS !--> 
+		<div class="card" >
+		<a href="{{ url_for('post', Webindex=job.Webindex)}}" >
+			<div class="text-center">
+			<h1 class="centre">
+				{{ job['Title'] }} 
+			</h1>
+			<p class="card-content">
+                {% if job['Company'] != 'NA' %}
+                <b>Company:</b> <a href="{{ url_for('Profilepage', Company=job['Company'])}}" type="company" >{{ job['Company'] }}</a><br>
+                {% endif %}
+                
+                {% if job['Salary'] %}
+                <a><b>Salary:</b> ${{ job['Salary'] }}</a><br>
+                {% endif %}
+          
+                {% if job['ContractType'] %}
+                <a><b>ContractType:</b> {{ job['ContractType'] }}</a><br>
+                {% endif %}
+                        
+                        
+              </p>
+		</div>
+		</div></a>
+		
+		
+		
+		
+		{% endfor %}
+		</ul>
+		<br><br><br><br>
+{% endblock %}

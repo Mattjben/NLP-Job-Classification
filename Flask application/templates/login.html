@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<header class="HomeImage" id="home">
+  <!-- DISPLAY FASK MESSAGES !--> 
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% for category, message in messages %}
+						<div class="alert {{ category }}" role="alert">
+				{{ message }}
+				</div>
+				{% endfor %}
+				{% endwith %}
+  <!-- ANIMATED LOG IN BOX  !--> 
+<div class="wrapper fadeInDown">
+  
+    <div class="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+     <h2 class="inactive underlineHover"><a href="{{ url_for('add_user')}}">Sign Up</a></h2> 
+  
+      <!-- Icon -->
+       <!-- Icon image referece: [2]	“User Icons & Symbols.” https://www.flaticon.com/free-icons/user (accessed Oct. 16, 2022).-->
+      <div class="fadeIn first">
+        <img src="https://i.postimg.cc/Jhb8TH28/login.png" alt="" width="112" height="112">
+      </div>
+  
+      <!-- Login Form -->
+      <form method="POST">
+        <div class="Container">
+        <input type="text" id="Username" class="fadeIn second" name="Username" placeholder="Username" value="{{request.form.Username }}">
+        <input type="text" id="Password" class="fadeIn third" name="Password" placeholder="Password" value="{{request.form.Password }}">
+        <input type="submit" value="Log in">
+       </div>
+      </form>
+  
+  
+    </div>
+  </div>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="Footer" >
+    
+        
+          <h6 >Desgined 2022</h6>
+          <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+          <h6><b>Student ID:</b>  S3923076 </h6>
+          <h6><b>Student Name:</b> Matthew Bentham</h6>
+       
+    </div>
+  </footer>
+
+  {% endblock %}
+
+</body>
+
+</html>

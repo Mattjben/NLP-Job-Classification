@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- DISPLAY FASK MESSAGES !--> 
+	{% for category, message in messages %}
+	<div class="alert {{ category }}" role="alert">
+	{{ message }}
+	
+	</div>
+
+				
+		{% endfor %}
+		{% endwith %}
+		  <!-- USERCARD !--> 
+		<div class="Userprofile">
+		<div class="card2">
+
+					
+			<div class="text-center">
+				<h1 class="centre">{{ current_user.Username }}'s Company Profile</h1>
+				<hr>
+			
+				<h2>Company:</h2>
+				<p>{{ current_user.Company }}</p>
+				<h2>Username:</h2>
+				<p>{{ current_user.Username }}</p>
+				<h2>Email</h2>
+				<p>{{ current_user.Email }}</p>
+				
+				<br>
+					
+				<form action="{{ url_for('add', Id=current_user.Id)}}" >
+				<input type="submit" value="Create Job Postings">
+				 <!-- EDIT AND DELETE BUTTONS !--> 
+				<a href="{{ url_for('editUser')}}" type="edit" >Edit Profile</a>
+				<a href="{{ url_for('deleteuser')}}" type="delete" >Delete Profile</a>
+			</form>
+			</div>
+	
+		</div>
+			
+		</div>
+
+  <!-- IF USER HAS MADE JOB POSTS IT WILL DISPLAY THE JOB POST CARDS!--> 
+		{% if posts != [] %}
+		<div class="header">
+			<h1 class="title">Jobs Posted By {{ current_user.Company }}  </h1>
+			<br>
+			</div>
+		{% endif %}
+<ul class="row">
+
+
+{% for job in posts %}
+
+  <!-- JOB POST CARDS !--> 
+
+<div class="card" >
+<a href="{{ url_for('post', Webindex=job.Webindex)}}" >
+	<div class="text-center">
+	<h1 class="centre">
+		{{ job['Title'] }} 
+	</h1>
+	<p class="card-content">
+		{% if job['Company'] != 'NA' %}
+		<b>Company:</b> <a href="{{ url_for('Profilepage', Company=job['Company'])}}" type="company" >{{ job['Company'] }}</a><br>
+		{% endif %}
+		
+		{% if job['Salary'] %}
+		<a><b>Salary:</b> ${{ job['Salary'] }}</a><br>
+		{% endif %}
+	
+		{% if job['ContractType'] %}
+		<a><b>ContractType:</b> {{ job['ContractType'] }}</a><br>
+		{% endif %}
+				
+	  <!-- EDIT AND DELETE BUTTONS !--> 
+	<a href="{{ url_for('editpost', Webindex=job.Webindex)}}" type="edit" >Edit</a>	
+	<a href="{{ url_for('deletepost', Webindex=job.Webindex)}}" type="delete" >Delete</a>	
+	</p>
+</div>
+</div></a>
+		
+		{% endfor %}
+		</ul>
+		<br><br><br><br>
+
+ <!-- Footer -->
+ <footer>
+	<div class="Footer" >
+	
+		
+		  <h6 >Desgined 2022</h6>
+		  <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+		  <h6><b>Student ID:</b>  S3923076 </h6>
+		  <h6><b>Student Name:</b> Matthew Bentham</h6>
+	   
+	</div>
+  </footer>
+{% endblock %}

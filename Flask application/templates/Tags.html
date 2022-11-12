@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="header">
+	<h1 class="title">Tag generated for {{ Job.Title }} :</h1>
+	  <br>
+	</div>
+	<!-- Display predicted category  !--> 
+	<center>
+	<div class="Container3"> <p>{{ Job.Category }}</p></div>
+	<center>
+		<!-- EDIT AND ACCEPT BUTTONS  !--> 
+	<a href="{{ url_for('edittags', Webindex=Job.Webindex)}}" type="edit" >Change</a>	
+	<a href="/search" type="accept" >Accept</a>
+
+
+
+{% endblock %}

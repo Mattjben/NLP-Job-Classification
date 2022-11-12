@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+  <!-- DISPLAY FASK MESSAGES !--> 
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% for category, message in messages %}
+						<div class="alert {{ category }}" role="alert">
+				{{ message }}
+				</div>
+				{% endfor %}
+				{% endwith %}
+
+  <!-- JOB POST DETAILS !--> 
+<div class="Jobpost">
+
+<h1>{{ post.Title }}</h1>
+{% if post['Company'] != 'NA' %}
+<a>Posted by <a class="link" href="{{ url_for('Profilepage', Company=post.Company)}}" type="company" >{{ post.Company }}</a><br></a>
+{% endif %}
+<h2><b>Webindex: </b> {{ post.Webindex }}</h2>
+{% if post['Salary']  %}
+<h2><b>Salary: </b> &nbsp  $ {{ post.Salary}} </h2>
+{% endif %}
+{% if post['ContractType'] != 'NA' %}
+<h2><b>Contract Type: </b>&nbsp {{ post.ContractType}}</h2>
+<h2><b>Tag: </b> &nbsp   {{ post.Category}} </h2>
+{% endif %}
+<p>{{ post.Description|safe }}</p> 
+</div>
+
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="Footer" >
+      
+          
+            <h6 >Desgined 2022</h6>
+            <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+            <h6><b>Student ID:</b>  S3923076 </h6>
+            <h6><b>Student Name:</b> Matthew Bentham</h6>
+         
+      </div>
+    </footer>
+
+    {% endblock %}
+
+  </body>
+
+</html>

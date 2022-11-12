@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+<script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+{% block body %}
+<!-- LOADS ADVANCED TEXT EDITOR  !--> 
+{{ ckeditor.load(pkg_type="standard-all") }}
+{{ ckeditor.config(name='Description') }}
+
+    <div class="Container">
+      <div class="Container2">
+      <h1>Create Job Posting</h1>
+      <div class="Jobinfo">
+        <!-- SAME FORM INPUTS AS add.html except all inputs are prefilled with values allready in the database !--> 
+    <form name="addForm" id="addForm" method="POST"  novalidate>
+      <label>Title:</label>
+      <input type="text"  placeholder="Title" name="title" id="title" required data-validation-required-message="Please enter a title." value="{{ post.Title }}" required><br>
+       <br>
+      <label>Company:</label>
+      <p>{{ post.Company }}</p>
+      <label>Salary:</label>
+      
+      <input type="text"  placeholder="Salary ($)" name="Salary" id="Salary" value="{{ post.Salary }}" ><br>
+      <label for="Cat">Contract Type:</label><br>
+                  <select name="ContractType" id="ContractType" value="{{ post.ContractType }}">
+                      <option value="Part Time">Part Time</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Contract">Contract</option>
+                  </select>
+
+      
+      <br>
+    
+                  
+                </div>
+                <br>
+                {{ ckeditor.create(value= des ) }}
+                <br>
+                <input type="submit" value="Submit">
+    </form>
+   
+      </div>
+    </div>
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="Footer" >
+    
+        
+          <h6 >Desgined 2022</h6>
+          <h6>COSC2820 Assignment 2 | Milestone II Web-based Data </h6>
+          <h6><b>Student ID:</b>  S3923076 </h6>
+          <h6><b>Student Name:</b> Matthew Bentham</h6>
+       
+    </div>
+  </footer>
+
+  {% endblock %}
+
+</body>
+
+</html>

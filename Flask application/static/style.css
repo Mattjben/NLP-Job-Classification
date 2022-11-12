@@ -1,0 +1,860 @@
+/* Intialise variables */
+:root {
+  --normal-font: 400;
+  --bold-font: 600;
+  --bolder-font: 900;
+  --line-height: 1.7rem;
+  --transition: 0.4s ease-in;
+  --primary-color: #0582CA;
+  --darkenedblue: #034D77;
+  --yellowbut: #fcf6bd;
+  --greenbut:#80ed99;
+  --redbut: #E28D8F
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+transition: var(--transition);
+
+}
+*:focus {
+  outline: none;
+} 
+
+a {
+  color: #BFC0C0;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+}
+
+/* NAVBAR */
+/* CSS template for animated NAVBAR: [7]	“Navbar with fun hover effect.” https://codepen.io/kevinpowell/pen/GrLKNo (accessed Oct. 16, 2022). */
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+  box-shadow: 0px 3px 2px #f1f1f1;
+  z-index: 9999;
+	top: 0;
+}
+
+.navbar {
+  font-family: 'Open Sans';
+	font-weight: 800;
+	width: 90%;
+	margin:  auto;
+}
+
+header {
+  background: #ffff;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  margin-left:  12px;
+  margin-top:  12px;
+}
+
+
+nav {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+}
+
+nav ul {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  filter: brightness(75%);
+  color: var(--primary-color);
+}
+
+nav a::before {
+  filter: brightness(75%);
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 2;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a[class="nav-link"]:hover::before {
+  width: 100%;
+}
+
+
+
+
+/* Home Page */
+/* IMAGE REFERENCE: [1]	“500+ Search Pictures [HD] | Download Free Images on Unsplash.” https://unsplash.com/s/photos/search (accessed Oct. 23, 2022).  */
+.HomeImage{
+  position: relative; 
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://i.postimg.cc/XNgYL6nW/daniel-lerman-fr3-YLb9-UHSQ-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-transform:capitalize; 
+}
+.HomeImage::before{
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--primary-color);
+  opacity: 0.4;
+}
+
+.Intotext{
+  text-transform:capitalize;
+  font-size:4rem;
+  margin-right: 300px;
+  color: white;}
+
+.Intotext h1{
+  margin-top: 50px;
+  font-weight: 100;
+  position: relative;
+  display: inline-block;
+  font-size:5rem; 
+  }
+.Intotext h2{
+  margin-top: 1px;
+  margin-left: 10px;
+  color: #f1f1f1;
+  font-weight: 100;
+  font-size:2rem;
+  position: relative;
+}
+.Intotext p{
+  margin-top: 10px;
+  display:inline-block;
+}
+
+/* CSS template for animated button: [6]	“CSS Button On Hover Slide Effect.” https://codepen.io/RazorXio/pen/gMaoOW (accessed Oct. 16, 2022). */
+.button {
+  color: #FFF;
+  border: 2px solid var(--primary-color);
+  border-radius: 0px;
+  padding: 18px 36px;
+  display: inline;
+  font-family: 'Open Sans',  Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 var(--primary-color);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+
+.button:hover {
+  box-shadow: inset 400px 0 0 0 var(--primary-color);
+}
+
+
+
+body {
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+}
+
+
+/* LOGIN AND REGISTER PAGE */
+/* CSS template for login animation and style reference: [5]	“Pure CSS3 Login Form.” https://codepen.io/danzawadzki/pen/EgqKRr (accessed Oct. 16, 2022). */
+formcontent a,h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 10px 8px; 
+  }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.inactive {
+  color: #cccccc;
+}
+
+.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=button], input[type=submit]{
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 10px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 10px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=text] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+
+.Container input[type=text]:focus{
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+.Container2 p{
+  background-color: #f6f6f6;
+  font-size: 16px;
+  margin: 6px;
+  width: 85%;
+  padding: 15px 32px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.Container3 p{
+  background-color: #f6f6f6;
+  font-size: 16px;
+  margin: 6px;
+  width: 200px;
+  padding: 15px 32px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+
+input[type=text]:placeholder {
+  color: #cccccc;
+}
+
+.Container select,textarea{
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
+  width: 200px;
+  justify-content: left;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.Container select:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+.Container select:placeholder {
+  color: #cccccc;
+}
+
+.Container2 {
+  margin: 50px 500px 50px 50px;
+}
+.Container2 h1{
+  margin-bottom: 50px;
+}
+
+.Container2 textarea{
+  margin-bottom: 50px;
+  height: 300px;
+  width: 1000px;
+}
+/* ANIMATIONS */
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+/* BUTTONS USED */
+
+
+a[type=edit]{
+  background-color: var(--yellowbut);
+  border: none;
+  color: var(--darkenedblue);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 13px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+
+}
+a[type=edit]:hover {
+  background-color: #FFE347;
+}
+.link:hover {
+  color: var(--primary-color);
+}
+a[type=delete]{
+  background-color: var(--redbut);
+  border: none;
+  color: var(--darkenedblue);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+
+}
+a[type=delete]:hover {
+  background-color: #D14D4F;
+}
+
+a[type=accept]{
+  background-color: var(--greenbut);
+  border: none;
+  color: var(--darkenedblue);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+
+}
+a[type=accept]:hover {
+  background-color: #1AB83F;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+
+/* Ceating and editing posts */
+
+.Jobinfo {margin-right: 500px;}
+.Jobinfo label{
+  margin-right: 400px;
+  font-weight: bold;
+}
+
+/* FLASH MESSAGES */
+.alert {
+  margin-top: 5px;
+  display: inline-block;
+  width: 50%;
+  padding: 12px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-animation: cssAnimation 5s forwards; 
+  animation: cssAnimation 5s forwards;
+;
+}
+
+.message {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('https://i.imgur.com/Z8q7ww7.png');
+}
+
+@keyframes cssAnimation {
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+
+/*JOB SEARCH*/
+
+.card{
+  margin-bottom: 50px;
+  width: 100%;
+  padding:15px;
+  overflow:hidden;
+  border-radius: 4px;
+  flex: 50%;
+  cursor:pointer;
+  box-shadow: 0px 14px 80px rgba(14, 15, 38, 0.15);
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  position: relative;
+  
+}
+.text-center{ margin: 10px 10px 10px 10px;
+  width: 100%;
+}
+
+.card h1 {
+    padding: 0.1rem;
+    text-align: left;
+    color: var(--darkenedblue);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .card p {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #0d0d0d;
+  }
+
+.card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:7px;
+  height:100%;
+  background-color:#ADD8E6;
+  transform:scaleY(1);
+  transition:all 0.5s;
+  transform-origin: bottom
+}
+
+.card:after{
+  
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:7px;
+  height:100%;
+  background-color:var(--primary-color);
+  transform:scaleY(0);
+  transition:all 0.5s;
+  transform-origin: bottom
+}
+
+.card:hover::after{
+  transform:scaleY(1);
+}
+
+.Userprofile{
+  width: 100%;
+  min-height: 15vh;
+}
+
+.Userprofile h1{
+  text-align: center;
+  font-size: 22px;
+}
+.Userprofile p{
+  background-color: #f6f6f6;
+  font-size: 16px;
+  margin: 1px;
+  width: 85%;
+  padding: 15px 32px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.card2{
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 50px;
+  padding:15px;
+  background:white;
+  flex: 50%;
+  cursor:pointer;
+  font-family: Roboto, sans-serif;
+  box-shadow: 0px 14px 80px rgba(14, 15, 38, 0.15);
+  flex-direction: row;
+  border-radius: 15px;
+
+}
+
+
+.row {
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  column-gap: 100px;
+  column-count: 3;
+  list-style-type: none;
+}
+
+/*SEARCH BAR */ 
+/*CSS TEMPLATE FOR COLLAPSING BUTTON reference:  [3]	“Implementing A Pure CSS Collapsible | DigitalOcean.” https://www.digitalocean.com/community/tutorials/css-collapsible (accessed Oct. 16, 2022).*/ 
+/*CSS TEMPLATE FOR search bar  reference: “Simple Search Bar.”[4] https://codepen.io/huange/pen/bGqMqM (accessed Oct. 16, 2022).*/ 
+.searchword {
+  float: left;
+  width: 300px;
+  border: 3px solid var(--primary-color);
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 px;
+  outline: none;
+
+}
+.searchlist{
+  float: left;
+  width: 120px;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 px;
+  outline: none;
+}
+.searchrange{
+  float: left;
+  width: 20px;
+  border: 1px solid var(--primary-color);
+  border-right: none;
+  border-left: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 px;
+  outline: none;
+}
+
+
+.left{
+  width: 80px;
+  border-left: none;
+}
+.right{
+  border-right: none;
+  width: 80px;
+}
+.searchword:focus{
+  color: var(--primary-color);
+}
+.searchButton {
+  width: 65px;
+  margin-left: 0px;
+  float: left;
+  height: 36px;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.Searchbar{
+  min-height: 10vh;
+  min-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap-collabsible { 
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+
+}
+.wrap-collabsible h3{ 
+  color: var(--darkenedblue);
+
+}
+.toggle[type="checkbox"] { display: none;} 
+
+.lbl-toggle { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:bold; 
+  text-transform: uppercase;
+  text-align: center; 
+  width: 35%;
+  padding: 1rem; color: var(--darkenedblue); 
+  cursor: pointer;
+  transition: all 0.25s ease-out; } 
+
+.lbl-toggle:hover { color: var(--primary-color); } 
+.lbl-toggle::before { content: ' ';
+  border-top: 5px solid transparent; 
+  border-bottom: 5px solid transparent; 
+  border-left: 5px solid currentColor; 
+  vertical-align: middle;
+  margin-right: .7rem; 
+  transform: translateY(-2px); transition: transform .2s ease-out;} 
+
+.toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } 
+.collapsible-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out;} 
+.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 350px; } 
+
+.collapsible-content .content-inner { 
+  width: 600px;
+  } 
+
+.collapsible-content p { margin-bottom: 0; }
+
+.col {
+  float: left;
+  width: 33%;
+}
+
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  color: var(--primary-color);
+  font-weight: bold; }
+
+.subtitle { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-family: Roboto, sans-serif;
+  font-weight: bold; }
+
+/*JOB POSTING*/
+
+.Jobpost{min-height: 90vh;}
+
+
+.Jobpost h1{
+  display: flex;
+  margin-top: 60px;
+  margin-left: 50px;
+}
+.Jobpost h2{
+  display: flex;
+ font-weight: normal;
+  margin-left: 50px;
+  line-height: 0px;
+}
+.Jobpost p{
+  display: flex;
+ font-weight: normal;
+  margin-left: 50px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+.Jobpost a{
+  display: flex;
+ font-weight: normal;
+  margin-left: 50px;
+  margin-right: 200px;
+  margin-top: 2.5px;
+}
+.Footer{
+  
+  
+  display: block;
+  color: gray;
+  columns: 2;
+  column-gap: 10cm;
+  margin-left: 50px;
+}
+

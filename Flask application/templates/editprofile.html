@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- DISPLAY FLASK MESSAGES AT TOP OF SCREEN !--> 
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% for category, message in messages %}
+						<div class="alert {{ category }}" role="alert">
+				{{ message }}
+				</div>
+				{% endfor %}
+				{% endwith %}
+    <!-- COMPANY PROFILE CARD  !--> 
+    <div class="Userprofile">
+    <div class="card2">
+
+                    <!-- PRE-FILL form with values allready in the database !--> 
+                    <div class="text-center">
+                        <form name="addForm" id="addForm" method="POST"  novalidate>
+                        <h1 class="centre">EDIT PROFILE</h1><hr>
+                        <h2>Username:</h2><br>
+                        <input type="text" name="Username" id="Username" required data-validation-required-message="Please enter a Username." value="{{ user.Username }}" required><br>
+                        <h2>Company:</h2><br>
+                        <input type="text" name="Company" id="Company" required data-validation-required-message="Please enter a Company." value="{{ user.Company }}" required><br>
+                        <h2>Email:</h2><br>
+                        <input type="text" name="Email" id="Email" required data-validation-required-message="Please enter a Email." value="{{ user.Email }}" required><br>
+                        <h2>Password:</h2><br>
+                        <input type="text" name="Password" id="Password" required data-validation-required-message="Please enter a Password." value="" required><br>
+                        <h2>Confirm Password:</h2><br>
+                        <input type="text" name="Password2" id="Password2" required data-validation-required-message="Please enter a Password." value="" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    
+                    </div>
+            
+    </div>
+        
+    </div>
+    <br><br>  <br><br>
+    {% endblock %}

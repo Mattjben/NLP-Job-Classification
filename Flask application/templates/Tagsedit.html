@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="header">
+	<h1 class="title">Tag generated for {{ Job.Title }} :</h1>
+	  <br>
+	</div>
+	<center>
+	<div class="Container3"> <p>{{ Job.Category }}</p>
+	<center>
+        <div class="Container"><br><br>
+            <!-- DROP DOWN MENU TO EDIT TAGS !--> 
+            <form action="{{ url_for('edittags', Webindex=Job.Webindex)}}" method="POST">
+                <label for="Cat"><b> Change Tag/Category to:</b></label><br><br>
+                <select name="Category" id="Category" required >
+                <option value="Accounting_Finance">Accounting/Finance</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Healthcare_Nursing">Healthcare/Nursing</option>
+                <option value="Sales">Sales</option>
+                </select>
+	
+            </div></div>
+            
+				<input type="submit" value="SUMBIT">
+            </form>
+
+{% endblock %}

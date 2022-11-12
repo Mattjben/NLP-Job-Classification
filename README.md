@@ -35,18 +35,22 @@ In this phase of the project, using the document representations in *task 2*, mu
 This folder contains a flask app that can be run locally which consists of a job board that uses an NLP model to predict the category of a job after a employer creates one 
 ## Functionalities 
 1. Job search 
-![alt text](https://i.postimg.cc/T2Qh5hCh/Capture.png)
+
+<p align="center"> <img src="https://i.postimg.cc/T2Qh5hCh/Capture.png"> <p>
+
 
 2. Login/register
+<p align="center"> <img src="https://i.postimg.cc/8PJDkCY2/Capture2.png"> <p>
 
-<centre>![image](https://i.postimg.cc/8PJDkCY2/Capture2.png)</centre>
+
 3. Company profile
 
-<centre>![image2](https://i.postimg.cc/fRQ4wfmd/Capture.png)</centre>
+<p align="center"> <img src="https://i.postimg.cc/fRQ4wfmd/Capture.png"> <p>   
+
 4. Create job posting 
-  
-<centre> ![image3]( https://i.postimg.cc/cLdSRcCS/Capture.png)</centre>
+<p align="center"> <img src="https://i.postimg.cc/cLdSRcCS/Capture.png"> <p>
+ 
 5. Predict job category using NLP model 
-  
-<centre>![image4](https://i.postimg.cc/SNhF4GWM/Capture.png)</centre>
+<p align="center"> <img src="https://i.postimg.cc/SNhF4GWM/Capture.png"> <p>
+
 

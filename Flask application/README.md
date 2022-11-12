@@ -1,6 +1,6 @@
 # FLASK APP
 
-
+For the demostration of all the functionalites of the website please watch demo video.mp4
 Libraries to pip install: 
 - flask 
 - sqlalchemy 

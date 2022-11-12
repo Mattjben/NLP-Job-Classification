@@ -1,6 +1,7 @@
 # FLASK APP
 
-For the demostration of all the functionalites of the website please watch demo video.mp4
+For the demostration of all the functionalites of the website please watch demo video.mp4  
+
 Libraries to pip install: 
 - flask 
 - sqlalchemy 
@@ -21,3 +22,5 @@ To run make sure working directory contains:
 		- stopwords_en.txt
 		- nlp.py : generates prediction using bag of words model 
 		- style.css: css file used to style html 
+
+to run locally simply run the app.py file in the terminal

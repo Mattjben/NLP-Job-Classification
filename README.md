@@ -34,4 +34,4 @@ In this phase of the project, using the document representations in *task 2*, mu
 
 This folder contains a flask app that can be run locally which consists of a job board that uses an NLP model to predict the category of a job after a employer creates one 
 
-
+![alt text](http://url/to/img.png)

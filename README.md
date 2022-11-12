@@ -41,9 +41,12 @@ This folder contains a flask app that can be run locally which consists of a job
 
 <centre>![image](https://i.postimg.cc/8PJDkCY2/Capture2.png)</centre>
 3. Company profile
-![image2](https://i.postimg.cc/fRQ4wfmd/Capture.png)
+
+<centre>![image2](https://i.postimg.cc/fRQ4wfmd/Capture.png)</centre>
 4. Create job posting 
-![image3]( https://i.postimg.cc/cLdSRcCS/Capture.png)
-4. Predict job category using NLP model 
-![image4](https://i.postimg.cc/SNhF4GWM/Capture.png)
+  
+<centre> ![image3]( https://i.postimg.cc/cLdSRcCS/Capture.png)</centre>
+5. Predict job category using NLP model 
+  
+<centre>![image4](https://i.postimg.cc/SNhF4GWM/Capture.png)</centre>
 

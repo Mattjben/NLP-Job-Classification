@@ -37,6 +37,8 @@ This folder contains a flask app that can be run locally which consists of a job
 1. Job search 
 ![alt text](https://i.postimg.cc/T2Qh5hCh/Capture.png)
 
-1. Job search
-2. ![image](https://i.postimg.cc/8PJDkCY2/Capture2.png)
+1. Login/register
+![image](https://i.postimg.cc/8PJDkCY2/Capture2.png)
+1. Company profile
+![image2](https://i.postimg.cc/fRQ4wfmd/Capture.png)
  

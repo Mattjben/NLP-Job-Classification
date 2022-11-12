@@ -41,4 +41,6 @@ This folder contains a flask app that can be run locally which consists of a job
 ![image](https://i.postimg.cc/8PJDkCY2/Capture2.png)
 1. Company profile
 ![image2](https://i.postimg.cc/fRQ4wfmd/Capture.png)
- 
+![image3]( https://i.postimg.cc/cLdSRcCS/Capture.png)
+![image4](https://i.postimg.cc/SNhF4GWM/Capture.png)
+

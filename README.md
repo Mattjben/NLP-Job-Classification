@@ -29,3 +29,9 @@ In this phase of the project, using the tokens processed in *task 1*, multiple f
 
 
 In this phase of the project, using the document representations in *task 2*, multiple NLP machine learing models will be generated and compared to investigate the effects each representation has on the accuracy of a machine learning text classification model.
+
+# Flask Application 
+
+This folder contains a flask app that can be run locally which consists of a job board that uses an NLP model to predict the category of a job after a employer creates one 
+
+
